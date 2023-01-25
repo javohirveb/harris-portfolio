@@ -1,0 +1,40 @@
+@use 'mixins';
+
+$header-height: 3rem;
+$nav-width: 324px;
+
+$font-medium: 500;
+$font-semi-bold: 600;
+$font-bold: 700;
+
+$first-color: #cc4b2c;
+$first-color-dark: #662616;
+$first-color-darken: #290f09;
+$text-color: #54423d;
+$text-color-light: #eae7e6;
+$first-color-lighten: #fffafa;
+
+$body-font: 'Poppins', sans-serif;
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1rem;
+$normal-font-size: .938rem;
+$small-font-size: 0.813rem;
+$smaller-font-size: .75rem;
+
+$mb-1: .5rem;
+$mb-2: 1rem;
+$mb-3: 1.5rem;
+$mb-4: 2rem;
+$mb-5: 2.5rem;
+
+$z-fixed: 100;
+
+@include mixins.media-md {
+    $h1-font-size: 2.25rem;
+    $h2-font-size: 1.5rem;
+    $h3-font-size: 1.25rem;
+    $normal-font-size: 1rem;
+    $small-font-size: 0.875rem;
+    $smaller-font-size: .813rem;
+}

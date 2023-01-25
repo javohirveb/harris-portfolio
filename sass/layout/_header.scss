@@ -1,0 +1,71 @@
+@use '../abstact/mixins';
+@use '../abstact/variables' as vars;
+
+/*===== NAV =====*/
+.nav {
+    height: vars.$header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2rem);
+    margin-left: vars.$mb-2;
+    margin-right: vars.$mb-2;
+    max-width: 1024px;
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 90%;
+        height: 100vh;
+        padding: 3rem;
+        display: flex;
+        align-items: center;
+        background-color: vars.$first-color;
+        transition: .5s;
+    }
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+        color: vars.$first-color-lighten;
+        cursor: pointer;
+    }
+
+    &__item {
+        margin-bottom: vars.$mb-4;
+    }
+
+    &__link {
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: vars.$first-color-lighten;
+        font-weight: vars.$font-bold;
+        transition: .3s;
+
+        &:hover {
+            color: vars.$text-color;
+        }
+    }
+
+    &__toggle {
+        color: vars.$first-color-dark;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
+}
+
+
+@include mixins.media-xl {
+    .nav {
+        &__close {
+            display: none;
+        }
+
+        &__menu {
+            left: 0;
+        }
+    }
+}

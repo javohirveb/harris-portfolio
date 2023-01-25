@@ -1,0 +1,72 @@
+@use "header";
+@use "footer";
+@use '../abstact/variables' as vars;
+@use '../abstact/mixins';
+
+/*===== CLASS CSS ===== */
+.section {
+    padding: 4rem 0 2rem;
+
+    &-title {
+        font-size: vars.$h1-font-size;
+        color: vars.$first-color;
+        margin-bottom: vars.$mb-3;
+        text-align: center;
+    }
+
+    &-subtitle {
+        display: block;
+        font-size: vars.$small-font-size;
+        color: vars.$first-color-darken;
+        text-align: center;
+        font-weight: vars.$font-bold;
+        margin-bottom: .25rem;
+    }
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: vars.$mb-2;
+    margin-right: vars.$mb-2;
+}
+
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: vars.$z-fixed;
+    background-color: vars.$first-color-lighten;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+/*=== Show menu ===*/
+.show {
+    left: 0;
+}
+
+/*Active menu*/
+.active {
+    color: vars.$text-color;
+    margin-left: vars.$mb-2;
+}
+
+@include mixins.media-xl {
+    .l-header {
+        width: 0;
+    }
+
+    .section {
+        padding: 3rem 0 2rem;
+    }
+
+    .bd-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

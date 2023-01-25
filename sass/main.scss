@@ -1,0 +1,549 @@
+@use 'abstact/mixins';
+@use 'abstact/variables' as vars;
+@use 'base/base';
+@use 'layout/index.scss';
+
+/*===== HOME =====*/
+.home {
+    &__container {
+        height: calc(100vh - vars.$header-height);
+        align-items: center;
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        text-align: center;
+    }
+
+    &__img {
+        padding-top: 1.3rem;
+        padding-left: 0.8rem;
+        width: 160px;
+        height: 160px;
+        background-color: vars.$first-color;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: vars.$mb-2;
+
+        img {
+            width: 155px;
+        }
+    }
+
+    &__title {
+        font-size: vars.$h1-font-size;
+        color: vars.$first-color;
+        font-weight: vars.$font-semi-bold;
+    }
+
+    &__profession {
+        font-size: vars.$small-font-size;
+        color: vars.$first-color-dark;
+        margin-bottom: vars.$mb-5;
+    }
+
+    &__social {
+        margin-bottom: 5rem;
+
+        &-link {
+            display: inline-flex;
+            background-color: vars.$first-color;
+            color: vars.$first-color-lighten;
+            font-size: 1.1rem;
+            border-radius: 50%;
+            padding: 0.4rem;
+            margin: 0 vars.$mb-1;
+            transition: .3s;
+
+            &:hover {
+                background-color: vars.$first-color-dark;
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+    }
+}
+
+
+/*BUTTONS*/
+.button {
+    display: inline-block;
+    background-color: vars.$first-color;
+    color: vars.$first-color-lighten;
+    padding: 1rem 2rem;
+    font-weight: vars.$font-semi-bold;
+    border-radius: .5rem;
+    transition: .3s;
+
+    &:hover {
+        background-color: vars.$first-color-dark;
+    }
+
+    &__light {
+        background-color: vars.$first-color-lighten;
+        color: vars.$first-color;
+
+        &:hover {
+            color: vars.$first-color-lighten;
+        }
+    }
+}
+
+
+/* ===== ABOUT =====*/
+.about {
+    &__container {
+        row-gap: 2rem;
+    }
+
+    &__data {
+        text-align: center;
+    }
+
+    &__description {
+        margin-bottom: vars.$mb-4;
+    }
+
+    &__img {
+        width: 220px;
+        border-radius: 0.5rem;
+        margin: 0 auto;
+    }
+
+    &__information {
+        margin-bottom: vars.$mb-4;
+
+        &-title {
+            font-size: vars.$h3-font-size;
+            color: vars.$first-color-dark;
+            margin-bottom: vars.$mb-2;
+        }
+
+        &-data {
+            display: flex;
+            align-items: center;
+            padding-left: 1.5rem;
+            margin-bottom: vars.$mb-3;
+        }
+
+        &-icon {
+            font-size: 1.5rem;
+            color: vars.$first-color;
+            margin-right: vars.$mb-4;
+        }
+
+        &-subtitle {
+            display: block;
+            font-weight: vars.$font-semi-bold;
+
+            &-small {
+                font-size: vars.$small-font-size;
+            }
+        }
+    }
+
+}
+
+
+/* ===== SKILLS =====*/
+.skills {
+    &__container {
+        row-gap: 2rem;
+    }
+
+    &__subtitle {
+        font-size: vars.$h3-font-size;
+        color: vars.$first-color-dark;
+        margin-bottom: vars.$mb-2;
+    }
+
+    &__data {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 vars.$mb-2;
+        margin-bottom: vars.$mb-4;
+    }
+
+    &__name {
+        text-transform: uppercase;
+    }
+
+    &__bar {
+        position: absolute;
+        bottom: -0.75rem;
+        height: 0.25rem;
+        background-color: vars.$first-color;
+    }
+
+    &__html {
+        width: 80%;
+    }
+
+    &__js {
+        width: 90%;
+    }
+
+    &__react {
+        width: 70%;
+    }
+
+    &__angular {
+        width: 60%;
+    }
+
+    &__php {
+        width: 80%;
+    }
+
+    &__node {
+        width: 70%;
+    }
+
+    &__firebase {
+        width: 90%;
+    }
+
+    &__python {
+        width: 80%;
+    }
+}
+
+
+/* ===== EDUCATION =====*/
+.education {
+    &__container {
+        row-gap: 2rem;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+    }
+
+    &__race,
+    &__year {
+        font-size: vars.$h3-font-size;
+        margin-bottom: 0.25rem;
+    }
+
+    &__specialty,
+    &__university {
+        display: block;
+        font-size: vars.$smaller-font-size;
+    }
+
+    &__university,
+    &__year {
+        text-align: right;
+    }
+
+    &__time {
+        padding: 0 1rem;
+        justify-self: center;
+    }
+
+    &__rounder {
+        position: relative;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: vars.$first-color;
+        border-radius: 50%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            transform: translate(-4px, -4px);
+            width: 20px;
+            height: 20px;
+            border: 1px solid vars.$first-color;
+            border-radius: 50%;
+        }
+    }
+
+    &__line {
+        display: block;
+        height: 90%;
+        width: 2px;
+        background-color: vars.$first-color;
+        transform: translate(5px, -4px);
+    }
+}
+
+
+/* ===== SERVICES =====*/
+.services {
+    &__container {
+        row-gap: 2rem;
+    }
+
+    &__content {
+        padding: 1.5rem 0.5rem;
+        border: 2px solid vars.$first-color;
+        border-radius: 0.5rem;
+        text-align: center;
+
+        &:hover {
+            background-color: vars.$first-color;
+
+            .services__icon {
+                background-color: vars.$first-color-lighten;
+                color: vars.$first-color;
+            }
+
+            .services__title {
+                color: vars.$first-color-lighten;
+            }
+
+            .services__description {
+                color: vars.$first-color-lighten;
+            }
+        }
+    }
+
+    &__icon {
+        font-size: 2rem;
+        padding: 0.5rem;
+        background-color: vars.$first-color;
+        color: vars.$first-color-lighten;
+        border-radius: 50%;
+        margin-bottom: vars.$mb-2;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        color: vars.$first-color-dark;
+        margin-bottom: vars.$mb-1;
+    }
+
+    &__title,
+    &__description,
+    &__icon,
+    &__content {
+        transition: .5s;
+    }
+}
+
+/* ===== PROJECT IN MIND  =====*/
+.project {
+    background-color: vars.$first-color;
+    padding-bottom: 0;
+
+    &__container {
+        row-gap: 2rem;
+    }
+
+    &__data {
+        text-align: center;
+    }
+
+    &__description,
+    &__title {
+        color: vars.$first-color-lighten;
+    }
+
+    &__description {
+        margin-bottom: vars.$mb-4;
+    }
+
+    &__img {
+        width: 220px;
+        justify-self: center;
+    }
+}
+
+
+/* ===== WORKS =====*/
+.works {
+    &__container {
+        justify-items: center;
+        row-gap: 2rem;
+    }
+
+    &__img {
+        position: relative;
+        overflow: hidden;
+        border-radius: .5rem;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover .works__data {
+            bottom: 0;
+        }
+    }
+
+    &__data {
+        position: absolute;
+        bottom: -100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(204, 75, 44, .7);
+        border-radius: 0.5rem;
+        transition: .3s;
+    }
+
+    &__link {
+        display: inline-flex;
+        font-size: 1.5rem;
+        background-color: vars.$first-color-lighten;
+        color: vars.$first-color;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        margin-bottom: vars.$mb-2;
+    }
+
+    &__title {
+        font-size: vars.$h2-font-size;
+        color: vars.$first-color-lighten;
+    }
+}
+
+
+/* ===== CONTACT =====*/
+.contact {
+    &__container {
+        row-gap: 3rem;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1rem;
+        outline: none;
+        border: none;
+        background-color: vars.$text-color-light;
+        font-size: vars.$normal-font-size;
+        margin-bottom: vars.$mb-2;
+        border-radius: 0.5rem;
+        resize: vertical;
+    }
+
+    & ::placeholder {
+        color: vars.$first-color-dark;
+        font-family: vars.$body-font;
+        font-weight: vars.$font-medium;
+    }
+
+    &__button {
+        outline: none;
+        border: none;
+        font-family: vars.$body-font;
+        font-size: vars.$normal-font-size;
+        cursor: pointer;
+    }
+
+    &__info {
+        margin-bottom: vars.$mb-3;
+    }
+
+    &__subtitle {
+        font-size: vars.$h3-font-size;
+        color: vars.$first-color-dark;
+        margin-bottom: vars.$mb-1;
+    }
+
+    &__text {
+        display: block;
+        padding-left: 1rem;
+    }
+}
+
+@include mixins.media-md {
+
+    .home__button {
+        width: initial;
+    }
+
+    .nav__menu {
+        width: vars.$nav-width;
+    }
+
+    .about__container,
+    .skills__container,
+    .services__container,
+    .works__container,
+    .contact__container,
+    .contact__inputs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        &__data {
+            text-align: initial;
+        }
+
+        &__description {
+            margin-bottom: vars.$mb-5;
+        }
+
+        &__img {
+            width: 100%;
+        }
+
+        &__information {
+            padding-left: 4rem;
+        }
+    }
+
+    .education__time {
+        padding: 0 2rem;
+    }
+
+    .project {
+        background: none;
+
+        &__container {
+            background-color: vars.$first-color;
+            grid-template-columns: 2fr 1.2fr;
+            padding: 0 2rem;
+            border-radius: 0.5rem;
+        }
+
+        &__data {
+            padding: 3rem 0;
+        }
+
+        &__data,
+        &__title {
+            text-align: initial;
+        }
+
+        &__img {
+            min-width: 100%;
+            align-self: flex-end;
+        }
+    }
+
+    .contact {
+        &__inputs {
+            display: grid;
+            column-gap: 1.5rem;
+        }
+
+        &__info {
+            padding-left: 3rem;
+        }
+    }
+}
+
+@include mixins.media-xl {
+    .home__container {
+        height: 100vh;
+    }
+
+    .services__container,
+    .works__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
