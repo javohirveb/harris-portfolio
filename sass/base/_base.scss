@@ -5,53 +5,65 @@
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+   scroll-behavior: smooth;
 }
 
 body {
-    margin: vars.$header-height 0 0 0;
-    font-family: vars.$body-font;
-    font-size: vars.$normal-font-size;
-    font-weight: vars.$font-medium;
-    background-color: vars.$first-color-lighten;
-    color: vars.$text-color;
-    line-height: 1.6;
+   margin: vars.$header-height 0 0 0;
+   font-family: vars.$body-font;
+   font-size: vars.$normal-font-size;
+   font-weight: vars.$font-medium;
+   background-color: vars.$first-color-lighten;
+   color: vars.$text-color;
+   line-height: 1.6;
+   overflow-x: hidden;
 }
 
 h1,
 h2,
 h3,
 p {
-    margin: 0;
+   margin: 0;
 }
 
 h3 {
-    font-weight: vars.$font-semi-bold;
+   font-weight: vars.$font-semi-bold;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+   margin: 0;
+   padding: 0;
+   list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: vars.$text-color;
+   text-decoration: none;
+   color: vars.$text-color;
 }
 
 img {
-    height: auto;
-    display: block;
+   height: auto;
+   display: block;
+}
+
+::-webkit-scrollbar {
+   width: 12px;
+   &-thumb {
+      background: vars.$first-color;
+      border-radius: 10px;
+      &:hover {
+         background: vars.$first-color-dark;
+      }
+   }
 }
 
 @include mixins.media-xl {
-    body {
-        margin: 0;
-        padding-left: vars.$nav-width;
-    }
+   body {
+      margin: 0;
+      padding-left: vars.$nav-width;
+   }
 }
