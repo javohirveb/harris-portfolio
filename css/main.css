@@ -3,12 +3,12 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
