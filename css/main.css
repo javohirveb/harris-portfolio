@@ -3,10 +3,12 @@
 ::before,
 ::after {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -665,4 +667,4 @@ img {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=main.css.map */
