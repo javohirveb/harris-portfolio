@@ -6,7 +6,6 @@
 ::before,
 ::after {
    box-sizing: border-box;
-   overflow-x: hidden;
 }
 
 html {
@@ -21,6 +20,9 @@ body {
    background-color: vars.$first-color-lighten;
    color: vars.$text-color;
    line-height: 1.6;
+}
+
+.overflow-hidden {
    overflow-x: hidden;
 }
 
